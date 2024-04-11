@@ -1,2 +1,4 @@
 1. Implemente um programa que solicite 10 números inteiros informados pelo usuário. Exiba a soma.
 https://onlinegdb.com/-aHLhrDS9
+2. Implemente um programa que solicite 5 números do tipo ponto flutuante ao usuário. Exiba o maior número informado.
+https://onlinegdb.com/2gC1TN45M
