@@ -1,4 +1,217 @@
 1. Implemente um programa que solicite 10 números inteiros informados pelo usuário. Exiba a soma.
-https://onlinegdb.com/-aHLhrDS9
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int soma=0, numero;
+	
+	for (int i=0; i<10;i++){
+	    System.out.println("Informe o número: ");
+	    numero= sc.nextInt();
+	    soma+=numero;
+	}
+	System.out.println("A soma do conjunto é igual a: "+ soma);
+	sc.close();
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
 2. Implemente um programa que solicite 5 números do tipo ponto flutuante ao usuário. Exiba o maior número informado.
-https://onlinegdb.com/2gC1TN45M
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+    double maiorNum= Double.MIN_VALUE;
+    for (int i = 0;i <5; i++){
+        System.out.println("Escreva um Numero:");
+        double numero= sc.nextInt();
+        if (numero>maiorNum){
+            maiorNum=numero;
+            
+        }
+    }
+    System.out.println("O maior numero é:"+maiorNum);
+    sc.close();
+	}
+} 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3. Implemente um programa que solicite 10 números inteiros ao usuário. Informe quantos números são pares.
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int []numeros = new int[10];
+		int countPares=0;
+		
+		for (int i=0;i<10;i++){
+		    	System.out.println("Insira o numero:");
+		numeros[i]=sc.nextInt();
+		if(numeros[i]%2==0){
+		    countPares++;
+		    
+		}
+		
+		}
+		System.out.println("Quantos numeros pares são " + countPares);
+		sc.close();
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+4. Escreva um algoritmo que receba a idade e o peso de sete pessoas. Calcule e exiba a quantidade de pessoas com mais de 90 quilos.
+A média das idades das sete pessoas.
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[]idade= new int[7];
+		double[]peso= new double[7];
+		int mais90Kg=0;
+		int somaIdade=0;
+		
+		for (int i=0;i<7;i++){
+		     System.out.print("Digite a idade da pessoa "+(i+1)+":");
+		 idade[i]=sc.nextInt();
+		 System.out.print("Digite o peso da pessoa "+(i+1)+":");
+		 peso[i]=sc.nextInt();
+		     
+		     if(peso[i]>90){
+		         mais90Kg++;
+		     }
+		     somaIdade+=idade[i];
+		     
+		}
+		double mediaIdade= somaIdade/7;
+		System.out.println("Pessoas com mais de 90kg:" + mais90Kg);
+        System.out.println("Média de idade: " + mediaIdade);
+        
+        sc.close();
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+5. Escreva um algoritmo que receba a idade, a altura e o peso de 25 pessoas. Calcule e exiba.
+a) Quantidade de pessoas com idade superior a 50 anos.
+b) A média das alturas das pessoas com idade entre 10 e 20 anos;
+c) A porcentagem de pessoas com peso inferior a 40 quilos entre todas as analisadas.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] idade = new int[25];
+        double[] altura = new double[25];
+        double[] peso = new double[25];
+        int mais50Anos = 0;
+        double somaAltura = 0;
+        int idades10a20 = 0;
+        int pesoMenor40 = 0;
+       
+        for (int i = 0; i < 25; i++) {
+            System.out.print("Idade da pessoa " + (i + 1) + ": ");
+            idade[i] = sc.nextInt();
+            System.out.print("Altura da pessoa " + (i + 1) + ": ");
+            altura[i] = sc.nextDouble();
+            System.out.print("Peso da pessoa " + (i + 1) + ": ");
+            peso[i] = sc.nextDouble();
+
+            if (idade[i] > 50) { 
+                mais50Anos++; 
+            }
+
+            if (idade[i] >= 10 && idade[i] <= 20) { 
+                somaAltura += altura[i]; 
+                idades10a20++; 
+            }
+
+            if (peso[i] < 40) { 
+                pesoMenor40++; 
+            }
+        }
+        
+        double mediaAltura10a20 = idades10a20 > 0 ? somaAltura / idades10a20 : 0;
+
+        double porcentagemPesoMenor40 = (pesoMenor40 * 100.0) / 25;
+
+        System.out.println("Pessoas com idade superior a 50 anos: " + mais50Anos);
+        System.out.println("Média de altura das pessoas com idade entre 10 e 20 anos: " + mediaAltura10a20);
+        System.out.println("Porcentagem de pessoas com peso inferior a 40 quilos: " + porcentagemPesoMenor40 + "%");
+
+        sc.close();
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+6. Faça um programa que receba dez números, calcule e mostre a soma dos números pares, dos números ímpares e dos divisíveis por 3.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] numeros= new int[10];
+        int somaPares= 0;
+        int somaImpares= 0;
+        int somaDivisiveisPor3=0;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Digite o " + (i + 1) + "º número:");
+            numeros[i] = sc.nextInt();
+            if (numeros[i] % 2 == 0) {
+                somaPares += numeros[i];
+            } else {
+                somaImpares += numeros[i];
+            }
+            if (numeros[i] % 3 == 0) {
+                somaDivisiveisPor3 += numeros[i];
+            }
+        }
+        System.out.println("Soma dos pares: " + somaPares);
+        System.out.println("Soma dos ímpares: " + somaImpares);
+        System.out.println("Soma dos divisíveis por 3: " + somaDivisiveisPor3);
+
+        sc.close();
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+7. Faça um programa que exiba todos os números entre 1000 e 2000 que quando divisíveis por 5 produzam resto 3.
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1000; i <= 2000; i++) {
+            if (i % 5 == 3) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+8. Implemente um programa que solicite ao usuário um número. Exiba a tabuada de 0 a 100 deste número.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite um número:");
+        int numero = scanner.nextInt();
+        System.out.println("Tabuada de " + numero + ":");
+        for (int i = 0; i <= 100; i++) {
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
+        scanner.close();
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+9. Escreva um algoritmo que calcule o Fatorial de um número.
+Ex. 5!
+5! = 5 * 4! = 4 * 3! = 3 * 2 ! = 2 * 1! = 1 * 0!
+0! = 1 (por definição)
+5! = 1 * 2 * 3 * 4 * 5
+
